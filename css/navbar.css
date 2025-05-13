@@ -1,0 +1,44 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #003366 !important;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff !important;
+}
+
+.navbar .disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+
+/* Responsividade para dispositivos pequenos */
+@media (max-width: 768px) {
+  .nav-link {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-toggler {
+    border: none;
+    background: transparent;
+  }
+  .navbar-toggler-icon {
+    background-color: #003366;
+  }
+}
