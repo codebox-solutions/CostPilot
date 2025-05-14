@@ -20,13 +20,13 @@
             <form id="loginForm">
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email_login" name="email">
                     <div class="invalid-feedback">Insira um e-mail válido.</div>
                 </div>
 
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
-                    <input type="password" class="form-control" id="senha" name="senha">
+                    <input type="password" class="form-control" id="senha_login" name="senha">
                     <div class="invalid-feedback">Senha deve ter no mínimo 6 caracteres.</div>
                 </div>
 
