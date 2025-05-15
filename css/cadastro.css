@@ -1,0 +1,9 @@
+.register-container {
+    min-height: 100vh;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+}
