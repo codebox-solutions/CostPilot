@@ -34,7 +34,7 @@
 
                 <div class="d-flex justify-content-between mt-2">
                     <a href="#" class="text-success small">Esqueci minha senha</a>
-                    <a href="cadastro.php" class="text-success small">Criar conta</a>
+                    <a href="cadastro_usuario.php" class="text-success small">Criar conta</a>
                 </div>
             </form>
 
