@@ -1,5 +1,7 @@
 <?php
 session_start();
+include 'conexao.php';
+include 'modals.php';
 ?>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -8,7 +10,7 @@ session_start();
 
 <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background: white;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
             <img src="img/logo.png" alt="CostPilot Logo" height="50">
         </a>
 
@@ -33,7 +35,7 @@ session_start();
                     </li>
                 <?php else: ?>
                     <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.php?page=cadastro">Cadastro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro_usuario.php">Cadastro</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">
                             <i class="bi bi-person-circle"></i> Login
