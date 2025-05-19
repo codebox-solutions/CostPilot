@@ -56,6 +56,7 @@
     </div>
 
     <script src="/js/cadastro_usuario.js"></script>
+    <script src="/js/itens_basicos.js"></script>
 </body>
 
 </html>
