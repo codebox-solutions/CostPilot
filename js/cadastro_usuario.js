@@ -13,7 +13,7 @@ $("#btn_cadastro_usuarios").on("click", function (e) {
     return;
   }
 
-  if (!email || !validateEmail(email)) {
+  if (!email || !validar_email(email)) {
     $("#cadastro_email").addClass("is-invalid").focus();
     return;
   }
@@ -31,10 +31,6 @@ $("#btn_cadastro_usuarios").on("click", function (e) {
   cadastrar_usuarios(nome, email, senha);
 });
 
-function validateEmail(email) {
-  let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
 
 function cadastrar_usuarios(nome, email, senha) {
   $("#btn_cadastro_usuarios").prop("disabled", true);
