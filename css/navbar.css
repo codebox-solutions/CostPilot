@@ -13,8 +13,9 @@ body {
 
 .nav-link {
   color: #003366 !important;
-  margin-right: 15px;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -26,6 +27,21 @@ body {
   pointer-events: none;
 }
 
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #c5c5c5;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
 
 /* Responsividade para dispositivos pequenos */
 @media (max-width: 768px) {
@@ -33,12 +49,17 @@ body {
     margin-right: 0;
     margin-bottom: 10px;
   }
-  
+
   .navbar-toggler {
     border: none;
     background: transparent;
   }
+
   .navbar-toggler-icon {
     background-color: #003366;
+  }
+
+  .dropdown-menu {
+    min-width: auto;
   }
 }

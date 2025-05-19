@@ -19,8 +19,8 @@ try {
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nome'] = $usuario['name'];
         $_SESSION['usuario'] = $usuario['name'];
-        
-        echo json_encode(['status' => 'sucesso', 'redirect' => 'principal.php']);
+
+        echo json_encode(['status' => 'sucesso', 'redirect' => 'dashboard.php']);
     } else {
         echo json_encode(['status' => 'erro', 'mensagem' => 'E-mail ou senha inválidos.']);
     }
