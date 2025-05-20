@@ -16,7 +16,7 @@ include 'navbar.php';
 
     <div class="hero-section">
         <h1>CostPilot, descomplicando seu cálculo de finanças</h1>
-        <p>Transformamos números em decisões estratégicas. Descubra como nossa tecnologia calcula o preço ideal e projeta seu crescimento.</p>
+        <h3>Transformamos números em decisões estratégicas. Descubra como nossa tecnologia calcula o preço ideal e projeta seu crescimento.</h3>
     </div>
 
     <div>
