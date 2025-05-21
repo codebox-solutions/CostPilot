@@ -1,115 +1,59 @@
-.bg-light body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f5f8fa;
-  margin: 0;
-  padding: 0;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-  max-width: 960px;
-  margin: 40px auto;
-  background-color: #fff;
-  padding: 35px;
-  border-radius: 15px;
-  box-shadow: 10px 10px 3px  rgba(184, 186, 188, 1);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.title {
-  color: #003366;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
+
+#btn_opcoes_avancadas {
+    background-color: white;
+    border-color: black;
+    color: #000;
+}	
+
 .simform {
-  gap: 10px;
-  margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.simform label {
-    font-family: "Segoe UI", sans-serif;
-    color: #00061f;
-    font-size: 1em;
-    margin-left: 2%;
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
     margin-bottom: 5px;
-    margin-top: 5px;
-}
-button.btn {
-  border: none;
-  font-size: 1.5em;
-  margin: auto;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  min-width: 30%;
-  margin-left: 30%;
-  text-align: center;
-  display: inline-block;
-  padding: 2px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: #63a5bf;
-  color: white;
+    color: #333;
 }
 
-.simform input,
-.simform select {
-    margin: auto;
+select {
     padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    flex: 1;
-    min-width: 90%;
-}
-/* Botão Acordião */
-.acordiao {
-  background-color: #ffffff;
-  cursor: pointer;
-  padding: 10px;
-  text-align: left;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  margin: none;
-  color: #144259;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 10px;
-  min-width: 90%;
-  max-width: 90%;
-  flex: 1;
-  outline: none;
-  font-size: 15px;
-}
-button.acordiao_btn {
-  background-color: #ffffff;
-  text-align: left;
-  margin: auto;
-  border: none;
-  color: #144259;
-  flex: 1;
-  min-width: 100%;
-  outline: none;
-  font-size: 15px;
-  width: auto;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .acordiao:hover {
-  background-color: #fafeff;
-  color: #144259;
-}
-
-/* Style the collapsible content. Note: hidden by default */
 .conteudo {
-  color: #00061f;
-  display: none;
-
-} 
-div.checkbox {
-    display: block;
-    width: auto;
-    margin: auto;
+    margin-top: 15px;
+    display: none;
 }
-label.conteudo,
-select.conteudo {
-    font-family: "Segoe UI", sans-serif;
-    color: #00061f;
-    background-color: #fafeff;
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
 }
