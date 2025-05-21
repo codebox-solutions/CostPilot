@@ -36,7 +36,10 @@ include 'conexao.php';
             </select>
 
             <input type="date" id="filtro_data_simulacoes" />
-            <button class="btn btn-secondary" style="background-color: #1e4359;">Nova Simulação</button>
+            <button id="btn_criar_nova_simulacao" class="btn btn-secondary" style="background-color: #1e4359;" >
+                Nova Simulação
+            </button>
+
             <button class="btn btn-dark">Relatórios</button>
         </div>
 

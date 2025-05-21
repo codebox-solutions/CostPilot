@@ -1,5 +1,9 @@
 $(document).ready(function () {
   get_simulacoes();
+
+  $("#btn_criar_nova_simulacao").click(function () {
+    window.location.href = "nova_simulacao.php";
+  })
 });
 
 function get_simulacoes() {
