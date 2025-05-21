@@ -13,6 +13,7 @@ include 'conexao.php';
     <title>Criar Simulação - CostPilot</title>
     <link rel="stylesheet" href="css/nova_simulacao.css">
 </head>
+
 <body class="bg-light">
 
     <?php include 'navbar.php'; ?>
@@ -36,48 +37,28 @@ include 'conexao.php';
             <input type="number" min="1" step="any" id="impostos" name="impostos"><br><br>
 
             <div class="acordiao">
-            <button type="button" class="acordiao_btn">+ Opções Avançadas</button>
+                <button type="button" class="acordiao_btn">+ Opções Avançadas</button>
                 <div class="conteudo">
                     <div class=checkbox>
-                    <input type="checkbox" id="juroscompostos" name="juroscompostos">
-                    <label for="juroscompostos">Aplicar juros composos contínuos</label><br>
-                    <input type="checkbox" id="fluxocaixa" name="fluxocaixa">
-                    <label for="fluxocaixa">Inserir previsão de fluxo de caixa</label><br>
+                        <input type="checkbox" id="juroscompostos" name="juroscompostos">
+                        <label for="juroscompostos">Aplicar juros composos contínuos</label><br>
+                        <input type="checkbox" id="fluxocaixa" name="fluxocaixa">
+                        <label for="fluxocaixa">Inserir previsão de fluxo de caixa</label><br>
                     </div>
-                <label class="interpolacaolabel" for="interpolacao">Tipo de Interpolação</label><br>
-                <select name="interpolacao" id="interpolacao">
-                    <option value="linear">Linear</option>
-                    <option value="polinomial">Polinomial</option>
-                </select><br>
-                </div> 
+                    <label class="interpolacaolabel" for="interpolacao">Tipo de Interpolação</label><br>
+                    <select name="interpolacao" id="interpolacao">
+                        <option value="linear">Linear</option>
+                        <option value="polinomial">Polinomial</option>
+                    </select><br>
+                </div>
             </div><br>
-            
+
             <button class="btn" type="submit">Calcular Simulação</button>
-            
-        </form> 
-        <script>
-        var coll = document.getElementsByClassName("acordiao_btn");
-        var i;
 
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var conteudo = this.nextElementSibling;
-                if (conteudo.style.display === "block") {
-                    conteudo.style.display = "none";
-                    coll.textContent = '+ Opções Avançadas';
-                    
-                } else {
-                    conteudo.style.display = "block";
-                    coll.textContent = '- Opções Avançadas';
+        </form>
 
-                }
-            });
-        }
-        </script>
 
     </div>
-
-
-
+    <script src="js/nova_simulacao.js"></script>
 </body>
+</html>
