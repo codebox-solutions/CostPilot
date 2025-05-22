@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cs/modal.css">
+  <title>Modals</title>
+</head>
+<body>
+  
 <!-- Modal de Sucesso -->
 <div class="modal fade" id="modal_sucesso" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -27,3 +37,6 @@
     </div>
   </div>
 </div>
+
+</body>
+</html>
