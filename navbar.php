@@ -58,8 +58,9 @@ include 'modals.php';
 <script>
     const usuarioId = <?= json_encode($_SESSION['usuario_id']) ?>;
 </script>
-<script src="js/navbar.js"></script>
-<script src="js/itens_basicos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/print-this@1.15.0/printThis.min.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/itens_basicos.js"></script>
