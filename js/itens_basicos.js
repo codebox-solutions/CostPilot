@@ -35,3 +35,8 @@ function validar_email(email) {
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
+
+function mostrar_erro(mensagem) {
+    $('#mensagem_erro').text(mensagem);
+    $('#modal_erro').modal('show');
+}
