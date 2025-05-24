@@ -57,3 +57,63 @@
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modal_pdf" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" id="print_area">
+      <div class="modal-header">
+        <h5 class="modal-title">Relatório de Simulação</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h2 style="text-align:center;">COSTPILOT</h2>
+        <p style="text-align:center;">Relatório de Simulação - Documento de Análise Financeira</p>
+        <hr>
+
+        <h4>DADOS DA SIMULAÇÃO</h4>
+        <table class="table table-bordered">
+          <tr><td>Nome do Produto:</td><td id="rel_produto"></td></tr>
+          <tr><td>Data da Simulação:</td><td id="rel_data"></td></tr>
+          <tr><td>ID da Simulação:</td><td id="rel_id"></td></tr>
+        </table>
+
+        <h4>DETALHES FINANCEIROS</h4>
+        <table class="table table-bordered">
+          <tr><td>Custo Fixo (R$):</td><td id="rel_custo_fixo"></td></tr>
+          <tr><td>Custo Variável (R$):</td><td id="rel_custo_variavel"></td></tr>
+          <tr><td>Margem de Lucro Desejada (%):</td><td id="rel_margem_lucro"></td></tr>
+          <tr><td>Impostos (%):</td><td id="rel_impostos"></td></tr>
+          <tr><td>Lucro Estimado (R$):</td><td id="rel_lucro_estimado"></td></tr>
+        </table>
+
+        <h4>CONFIGURAÇÕES AVANÇADAS</h4>
+        <table class="table table-bordered">
+          <tr><td>Aplicar Juros Compostos?</td><td id="rel_juros"></td></tr>
+          <tr><td>Previsão de Fluxo de Caixa?</td><td id="rel_fluxo"></td></tr>
+          <tr><td>Tipo de Interpolação:</td><td id="rel_interpolacao"></td></tr>
+        </table>
+
+        <h4>Observações:</h4>
+        <p class="border p-2">
+          Simulação gerada automaticamente pela plataforma CostPilot. Os valores apresentados são estimativas baseadas nas informações fornecidas pelo usuário. Este relatório não possui valor fiscal.
+        </p>
+
+        <p class="text-center">
+          &copy; 2025 CostPilot - Relatório gerado em <span id="rel_gerado_em"></span>
+        </p>
+      </div>
+      <div id="botoes-opcoes" class="modal-footer">
+        <button class="btn btn-primary" onclick="imprimir_pdf()">Imprimir PDF</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @media print {
+  #botoes-opcoes, .barra-navegacao, footer {
+    display: none !important;
+  }
+}
+</style>
