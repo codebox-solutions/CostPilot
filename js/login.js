@@ -26,10 +26,10 @@ function autenticar_usuario(email, senha) {
     dataType: "json",
     data: { email, senha },
     success: function (res) {
-      if (res.status === "sucesso") {
+      if (res.status === "sucesso" && res.redirect) {
         window.location.href = res.redirect;
       } else {
-        $("#senha_login").addClass("is-invalid").focus();
+        mostrar_erro("Redirecionamento inválido.");
       }
     },
     error: function (xhr) {
@@ -40,7 +40,7 @@ function autenticar_usuario(email, senha) {
         resposta.mensagem = "Erro inesperado. Tente novamente.";
       }
 
-      alert(resposta.mensagem || "Erro desconhecido.");
+      mostrar_erro(resposta.mensagem || "Erro desconhecido.");
     },
   });
 }
