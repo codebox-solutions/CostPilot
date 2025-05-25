@@ -37,6 +37,6 @@ function validar_email(email) {
 }
 
 function mostrar_erro(mensagem) {
-    $('#mensagem_erro').text(mensagem);
+    $('#modal_erro_mensagem').text(mensagem);
     $('#modal_erro').modal('show');
 }
