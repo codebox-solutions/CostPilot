@@ -26,10 +26,10 @@ function autenticar_usuario(email, senha) {
     dataType: "json",
     data: { email, senha },
     success: function (res) {
-      if (res.status === "sucesso") {
+      if (res.status === "sucesso" && res.redirect) {
         window.location.href = res.redirect;
       } else {
-        $("#senha_login").addClass("is-invalid").focus();
+        mostrar_erro("Redirecionamento inválido.");
       }
     },
     error: function (xhr) {
