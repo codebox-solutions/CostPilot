@@ -40,7 +40,7 @@ function autenticar_usuario(email, senha) {
         resposta.mensagem = "Erro inesperado. Tente novamente.";
       }
 
-      alert(resposta.mensagem || "Erro desconhecido.");
+      mostrar_erro(resposta.mensagem || "Erro desconhecido.");
     },
   });
 }
