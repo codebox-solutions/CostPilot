@@ -3,7 +3,67 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 include 'conexao.php';
+
+$resultado = null;
+$erro = null;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Pegando dados do formulário
+    $nome = $_POST['productname'] ?? '';
+    $custo_fixo = floatval($_POST['custofixo'] ?? 0);
+    $custo_variavel = floatval($_POST['custovariavel'] ?? 0);
+    $volume = intval($_POST['volume'] ?? 1);
+    $margem_lucro = floatval($_POST['margemlucro'] ?? 0) / 100;
+    $impostos = floatval($_POST['impostos'] ?? 0) / 100;
+
+    $usar_juros = isset($_POST['juroscompostos']);
+    $taxa_juros = floatval($_POST['taxa_juros'] ?? 0) / 100;
+    $periodo_juros = intval($_POST['periodo_juros'] ?? 0);
+
+    $usar_fluxo = isset($_POST['fluxocaixa']);
+    $horizonte_fluxo = intval($_POST['horizonte_fluxo'] ?? 0);
+
+    $interpolacao = $_POST['interpolacao'] ?? 'linear';
+
+    try {
+        // Cálculo base
+        $custo_total = $custo_fixo + ($custo_variavel * $volume);
+        $custo_unitario = $custo_total / $volume;
+
+        $preco_venda_bruto = $custo_unitario / (1 - $margem_lucro);
+        $preco_venda_liquido = $preco_venda_bruto / (1 - $impostos);
+
+        // Aplicando juros compostos se selecionado
+        if ($usar_juros && $taxa_juros > 0 && $periodo_juros > 0) {
+            $fator_juros = pow(1 + $taxa_juros, $periodo_juros);
+            $preco_venda_liquido *= $fator_juros;
+        }
+
+        // Simulação de fluxo de caixa (se selecionado)
+        $fluxo_caixa = [];
+        if ($usar_fluxo && $horizonte_fluxo > 0) {
+            for ($i = 1; $i <= $horizonte_fluxo; $i++) {
+                if ($interpolacao == 'linear') {
+                    $fluxo_caixa[$i] = $preco_venda_liquido * $volume;
+                } elseif ($interpolacao == 'polinomial') {
+                    $fluxo_caixa[$i] = $preco_venda_liquido * $volume * pow($i, 2);
+                }
+            }
+        }
+
+        // Resultado organizado
+        $resultado = [
+            'nome' => htmlspecialchars($nome),
+            'preco_venda' => number_format($preco_venda_liquido, 2, ',', '.'),
+            'custo_unitario' => number_format($custo_unitario, 2, ',', '.'),
+            'fluxo_caixa' => $fluxo_caixa,
+        ];
+    } catch (Exception $e) {
+        $erro = "Erro no cálculo: " . $e->getMessage();
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -20,7 +80,7 @@ include 'conexao.php';
     <div class="container">
         <h2 class="title">Nova Simulação</h2>
         <div class="mt-3">
-            <form class="simform">
+            <form class="simform" method="POST" action="">
                 <div class="form-group">
                     <label for="nome_nova_simulacao">Nome do produto:</label>
                     <input type="text" id="nome_nova_simulacao" class="form-control" name="productname" placeholder="Ex: Camisa Gucci Tamanho P" required />
@@ -95,9 +155,28 @@ include 'conexao.php';
                 </div>
 
                 <button type="submit" class="btn btn-primary d-block mx-auto" style="width: 500px;">Calcular</button>
-
             </form>
         </div>
+
+        <?php if ($resultado) : ?>
+            <div class="resultado mt-4 p-4 border bg-white rounded">
+                <h3>Resultado da Simulação</h3>
+                <p><strong>Produto:</strong> <?= $resultado['nome'] ?></p>
+                <p><strong>Custo Unitário:</strong> R$ <?= $resultado['custo_unitario'] ?></p>
+                <p><strong>Preço de Venda Sugerido:</strong> R$ <?= $resultado['preco_venda'] ?></p>
+
+                <?php if (!empty($resultado['fluxo_caixa'])) : ?>
+                    <h4>Fluxo de Caixa</h4>
+                    <ul>
+                        <?php foreach ($resultado['fluxo_caixa'] as $periodo => $valor) : ?>
+                            <li>Período <?= $periodo ?>: R$ <?= number_format($valor, 2, ',', '.') ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        <?php elseif ($erro) : ?>
+            <div class="alert alert-danger mt-4"><?= $erro ?></div>
+        <?php endif; ?>
     </div>
 
     <script src="js/nova_simulacao.js"></script>
