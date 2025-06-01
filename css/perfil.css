@@ -1,0 +1,11 @@
+#perfil_avatar_usuario {
+    width: 100px;
+    height: 100px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 35px !important; 
+}

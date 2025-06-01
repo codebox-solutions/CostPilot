@@ -110,6 +110,60 @@
   </div>
 </div>
 
+<div class="modal fade" id="modal_alterar_email" tabindex="-1" aria-labelledby="modalEmailLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST" action="atualizar_email.php" onsubmit="return validarEmails()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEmailLabel">Alterar Email</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="email1" class="form-label">Novo Email</label>
+            <input type="email" class="form-control" id="input_email_um_modal_alterar_email" name="novo_email" required>
+          </div>
+          <div class="mb-3">
+            <label for="email2" class="form-label">Confirmar Email</label>
+            <input type="email" class="form-control" id="input_email_modal_dois_alterar_email" required>
+          </div>
+          <div class="text-danger d-none" id="erro_email">Os emails não coincidem.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-dark">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal fade" id="modal_alterar_senha" tabindex="-1" aria-labelledby="modalSenhaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST" action="atualizar_senha.php" onsubmit="return validarSenhas()">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalSenhaLabel">Alterar Senha</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="senha1" class="form-label">Nova Senha</label>
+            <input type="password" class="form-control" id="input_senha_um_modal_alterar_senha" name="nova_senha" required>
+          </div>
+          <div class="mb-3">
+            <label for="senha2" class="form-label">Confirmar Senha</label>
+            <input type="password" class="form-control" id="input_senha_modal_dois_alterar_senha" required>
+          </div>
+          <div class="text-danger d-none" id="erro_senha">As senhas não coincidem.</div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-dark">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
 <style>
   @media print {
   #botoes-opcoes, .barra-navegacao, footer {
