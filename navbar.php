@@ -27,7 +27,6 @@ include 'modals.php';
                 <?php if (isset($_SESSION['usuario'])): ?>
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Simulações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle p-0 ms-3 d-flex align-items-center" href="#" id="avatarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="avatar-circle">
@@ -35,7 +34,7 @@ include 'modals.php';
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
-                            <li><a class="dropdown-item" href="configuracoes.php">Configurações</a></li>
+                            <li><a class="dropdown-item" href="perfil.php">Configurações</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
