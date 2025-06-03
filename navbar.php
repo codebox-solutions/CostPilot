@@ -27,7 +27,6 @@ include 'modals.php';
                 <?php if (isset($_SESSION['usuario'])): ?>
                     <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Simulações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Relatórios</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle p-0 ms-3 d-flex align-items-center" href="#" id="avatarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="avatar-circle">
@@ -35,7 +34,7 @@ include 'modals.php';
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
-                            <li><a class="dropdown-item" href="configuracoes.php">Configurações</a></li>
+                            <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -55,11 +54,9 @@ include 'modals.php';
         </div>
     </div>
 </nav>
-<script>
-    const usuarioId = <?= json_encode($_SESSION['usuario_id']) ?>;
-</script>
-<script src="js/navbar.js"></script>
-<script src="js/itens_basicos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/print-this@1.15.0/printThis.min.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/itens_basicos.js"></script>
