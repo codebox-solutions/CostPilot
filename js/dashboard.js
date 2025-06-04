@@ -36,12 +36,12 @@ function get_simulacoes() {
       let concat = res
         .map(function (item) {
           return `
-        <tr>
+        <tr data-simulacao-id=${item.id}>
             <td>${item.nome}</td>
             <td>${item.tipo}</td>
             <td>${item.data}</td>
             <td>
-                <button class="btn btn-primary btn_" style="background-color: #1e4359;"onclick="abrir_simulacao(${item.id})">
+                <button class="btn btn-primary btn_visualizar" style="background-color: #1e4359;"onclick="abrir_simulacao(${item.id})">
                     Visualizar
                 </button>
                 <button class="btn btn-dark" onclick="editar_simulacao(${item.id})">
@@ -63,6 +63,9 @@ function get_simulacoes() {
       $(".btn_exportar").on("click", function () {
         $("#modal_exportar").data("simulacao-id", $(this).data("simulacao-id"));
         $("#modal_exportar").modal("show");
+      });
+      $(".btn_visualizar").on("click", function () {
+        gerar_pdf(this.closest("tr").dataset.simulacaoId);
       });
     },
     error: function () {
