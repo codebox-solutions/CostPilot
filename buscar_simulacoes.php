@@ -1,6 +1,7 @@
 <?php
 session_start();
 header('Content-Type: application/json');
+
 include 'conexao.php';
 
 if (!isset($_SESSION['usuario_id'])) {
@@ -9,39 +10,32 @@ if (!isset($_SESSION['usuario_id'])) {
 }
 
 $usuario_id = $_SESSION['usuario_id'];
+
 $nome = $_GET['nome'] ?? '';
 $tipo = $_GET['tipo'] ?? '';
-$data = $_GET['data'] ?? '';
 
 $nome_like = '%' . $nome . '%';
 
-$params = [$usuario_id, $nome_like];
+$tipo = $tipo === '' ? null : $tipo;
+
 $sql = "
 SELECT id, product_name, interpolation_type, created_at
 FROM simulations
 WHERE user_id = ?
 AND product_name LIKE ?
+AND ( ? IS NULL OR interpolation_type = ? )
+ORDER BY created_at DESC
 ";
-
-
-if (!empty($tipo)) {
-    $sql .= " AND interpolation_type = ? ";
-    $params[] = $tipo;
-}
-
-
-if (!empty($data)) {
-
-    $data_formatada = date('Y-m-d', strtotime($data));
-    $sql .= " AND DATE(created_at) = ? ";
-    $params[] = $data_formatada;
-}
-
-$sql .= " ORDER BY created_at DESC";
 
 try {
     $stmt = $pdo->prepare($sql);
-    $stmt->execute($params);
+
+    $stmt->execute([
+        $usuario_id,
+        $nome_like,
+        $tipo,
+        $tipo,
+    ]);
 
     $simulacoes = [];
 
@@ -50,7 +44,7 @@ try {
             'id' => (int)$row['id'],
             'nome' => $row['product_name'],
             'tipo' => $row['interpolation_type'],
-            'data' => date("d/m/Y", strtotime($row['created_at']))
+            'data' => date("d/m/Y", strtotime($row['created_at'])) 
         ];
     }
 
