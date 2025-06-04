@@ -41,8 +41,8 @@ function get_simulacoes() {
             <td>${item.tipo}</td>
             <td>${item.data}</td>
             <td>
-                <button class="btn btn-primary" style="background-color: #1e4359;"onclick="abrir_simulacao(${item.id})">
-                    Vizualizar
+                <button class="btn btn-primary btn_" style="background-color: #1e4359;"onclick="abrir_simulacao(${item.id})">
+                    Visualizar
                 </button>
                 <button class="btn btn-dark" onclick="editar_simulacao(${item.id})">
                     Editar
