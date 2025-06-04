@@ -25,7 +25,7 @@ include 'modals.php';
             <ul class="navbar-nav">
                 
                 <?php if (isset($_SESSION['usuario'])): ?>
-                    <li class="nav-item"><a class="nav-link" href="dashboard.php">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="nova_simulacao.php">Simulações</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle p-0 ms-3 d-flex align-items-center" href="#" id="avatarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
