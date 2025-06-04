@@ -27,4 +27,10 @@ $(document).ready(function () {
             $(".fluxo_campos").slideUp();
         }
     });
+
+    $("#btn_calcular_simulacao").on("click", function () {
+    
+        window.location.href = "dashboard.php";
+    
+    })
 });

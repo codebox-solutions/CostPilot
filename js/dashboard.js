@@ -17,6 +17,8 @@ $(document).ready(function () {
 
     $("#modal_exportar").modal("hide");
   });
+
+  gerar_pdf(16)
 });
 
 function get_simulacoes() {

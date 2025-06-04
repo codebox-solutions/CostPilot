@@ -94,7 +94,7 @@ include 'conexao.php';
                     </div>
                 </div>
 
-                <button id="btn_calcular_simulacao" class="btn btn-primary d-block mx-auto" style="width: 500px;">Calcular</button>
+                <a id="btn_calcular_simulacao" class="btn btn-primary d-block mx-auto" style="width: 500px;">Calcular</a>
             </form>
         </div>
     </div>
