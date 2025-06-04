@@ -31,6 +31,7 @@ include 'conexao.php';
 
             <select id="filtro_interpolacao_simulacoes">
                 <option value="" disabled selected>Tipo de Interpolação</option>
+                <option value="" selected>Todas</option>
                 <option value="Linear">Linear</option>
                 <option value="Polinomial">Polinomial</option>
             </select>
@@ -62,6 +63,9 @@ include 'conexao.php';
     </div>
 
     <script src="js/dashboard.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/filtrar_simulacao.js"></script>
+
 </body>
 
 </html>
