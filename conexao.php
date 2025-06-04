@@ -7,10 +7,10 @@ if (!file_exists($envPath)) {
 
 $env = parse_ini_file($envPath);
 
-$host = $env['DB_HOST'] ?? 'localhost';
-$dbname = $env['DB_NAME'] ?? 'CostPilot';
-$user = $env['DB_USER'] ?? 'root';
-$pass = $env['DB_PASS'] ?? '012345';
+$host = $env['DB_HOST'] ?? '';
+$dbname = $env['DB_NAME'] ?? '';
+$user = $env['DB_USER'] ?? '';
+$pass = $env['DB_PASS'] ?? '';
 
 if (empty($host) || empty($dbname) || empty($user) || empty($pass)) {
     die("Algumas variáveis de configuração do banco de dados estão faltando.");
