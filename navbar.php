@@ -11,7 +11,7 @@ include 'modals.php';
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="stylesheet" href="css/navbar.css">
 
-<nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background: white;">
+<nav class="navbar navbar-expand-lg navbar-light border-bottom">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
             <img src="img/logo.png" alt="CostPilot Logo" height="50">
