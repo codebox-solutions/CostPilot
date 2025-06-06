@@ -64,7 +64,6 @@ include 'conexao.php';
 
     <script src="js/dashboard.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/filtrar_simulacao.js"></script>
 
 </body>
 
