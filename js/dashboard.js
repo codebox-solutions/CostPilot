@@ -1,16 +1,16 @@
 $(document).ready(function () {
-  // Carregar as simulações inicialmente e ao alterar filtros
+  gerar_pdf(16);
   get_simulacoes();
   $("#filtro_nome_simulacoes").on("input", get_simulacoes);
   $("#filtro_interpolacao_simulacoes").on("change", get_simulacoes);
   $("#filtro_data_simulacoes").on("change", get_simulacoes);
 
-  // Botão para criar nova simulação
+  
   $("#btn_criar_nova_simulacao").click(function () {
     window.location.href = "nova_simulacao.php";
   });
 
-  // Confirmar exportação (PDF ou CSV)
+  
   $("#confirmar-exportar").on("click", function () {
     const formato = $('input[name="formato"]:checked').val();
     const simulacao_id = $("#modal_exportar").data("simulacao-id");
@@ -24,7 +24,7 @@ $(document).ready(function () {
     $("#modal_exportar").modal("hide");
   });
 
-  // Função para carregar e renderizar as simulações conforme filtros
+  
   function get_simulacoes() {
     $.ajax({
       type: "GET",
@@ -66,7 +66,7 @@ $(document).ready(function () {
 
         $("#tabela_simulacoes").html(linhas);
 
-        // Eventos dos botões gerados dinamicamente
+        
         $(".btn_exportar").on("click", function () {
           const id = $(this).data("simulacao-id");
           $("#modal_exportar").data("simulacao-id", id);
@@ -86,7 +86,7 @@ $(document).ready(function () {
   }
 });
 
-// Funções auxiliares (fora do escopo do document ready para uso global)
+
 
 function gerar_pdf(simulacao_id) {
   $.ajax({
