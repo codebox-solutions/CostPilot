@@ -23,7 +23,7 @@ include 'conexao.php';
             <form class="simform">
                 <div class="form-group">
                     <label for="nome_nova_simulacao">Nome do produto:</label>
-                    <input type="text" id="nome_nova_simulacao" class="form-control" name="productname" placeholder="Ex: Camisa Gucci Tamanho P" required value="Produto P" />
+                    <input type="text" id="nome_nova_simulacao" class="form-control" name="productname" placeholder="Ex: Camisa Gucci Tamanho P" required value="Bolo de Luxo Premium" />
                 </div>
 
                 <div class="form-group">
